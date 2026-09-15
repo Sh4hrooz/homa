@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: homa-ai
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    disk:
+      name: homa-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOMA_OWNER_NAME
+        sync: false
+      - key: HOMA_ACCESS_PASSWORD
+        sync: false
+      - key: HOMA_API_BASE
+        sync: false
+      - key: HOMA_API_KEY
+        sync: false
+      - key: HOMA_MODEL
+        value: gpt-4.1-mini
+      - key: HOMA_API_BASE_2
+        sync: false
+      - key: HOMA_API_KEY_2
+        sync: false
+      - key: HOMA_MODEL_2
+        sync: false

@@ -1,0 +1,12 @@
+services:
+  homa:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - homa-data:/app/data
+    restart: unless-stopped
+volumes:
+  homa-data:
